@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8" />
+        <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport' />
+        <meta name="viewport" content="width=device-width" />
+        <title>{% block title %}Put to Bed{% endblock %}</title>
+
+        {% stylesheets '//cdn.datatables.net/r/bs-3.3.5/jq-2.1.4,dt-1.10.8/datatables.min.css'
+                       '../app/Resources/public/css/global.css' %}
+        <link rel="stylesheet" href="{{asset_url}}"/>
+        {% endstylesheets %}
+        {% block stylesheets %}{% endblock %}
+        <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
+    </head>
+    <body>
+    <a href="{{ path('homepage') }}">Home</a>
+        {% block body %}{% endblock %}
+        {% javascripts '//cdn.datatables.net/r/bs-3.3.5/jqc-1.11.3,dt-1.10.8/datatables.min.js'
+                       '../app/Resources/public/js/global.js' %}
+
+        <script src="{{ asset_url }}"></script>
+        {% endjavascripts %}
+        {% block javascripts %}{% endblock %}
+    </body>
+</html>
