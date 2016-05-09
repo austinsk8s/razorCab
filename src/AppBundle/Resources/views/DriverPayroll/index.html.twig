@@ -1,0 +1,55 @@
+{% extends '::base.html.twig' %}
+
+{% block body -%}
+    <h1>Driver Payroll</h1>
+
+    <table class="table records_list">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Pickuptime</th>
+                <th>Dropofftime</th>
+                <th>Breakhours</th>
+                <th>Numjourneys</th>
+                <th>Workmilesdriven</th>
+                <th>Leisuremilesdriven</th>
+                <th>Farescollected</th>
+                <th>Tipscollected</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for entity in entities %}
+            <tr>
+                <td><a href="{{ path('reports_driverpayroll_show', { 'id': entity.id }) }}">{{ entity.id }}</a></td>
+                <td>{% if entity.pickupTime %}{{ entity.pickupTime|date('Y-m-d H:i:s') }}{% endif %}</td>
+                <td>{% if entity.dropOffTime %}{{ entity.dropOffTime|date('Y-m-d H:i:s') }}{% endif %}</td>
+                <td>{{ entity.breakHours }}</td>
+                <td>{{ entity.numJourneys }}</td>
+                <td>{{ entity.workMilesDriven }}</td>
+                <td>{{ entity.leisureMilesDriven }}</td>
+                <td>{{ entity.faresCollected }}</td>
+                <td>{{ entity.tipsCollected }}</td>
+                <td>
+                <ul>
+                    <li>
+                        <a href="{{ path('reports_driverpayroll_show', { 'id': entity.id }) }}">show</a>
+                    </li>
+                    <li>
+                        <a href="{{ path('reports_driverpayroll_edit', { 'id': entity.id }) }}">edit</a>
+                    </li>
+                </ul>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+        <ul>
+        <li>
+            <a href="{{ path('reports_driverpayroll_new') }}">
+                Create a new entry
+            </a>
+        </li>
+    </ul>
+    {% endblock %}
