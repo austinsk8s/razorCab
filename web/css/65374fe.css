@@ -20,6 +20,9 @@ table.dataTable{clear:both;margin-top:6px !important;margin-bottom:6px !importan
 
 
 
+body {
+  background: rgb(242, 242, 242);
+}
 
 .navbar-default {
   background: rgb(0, 153, 255);
