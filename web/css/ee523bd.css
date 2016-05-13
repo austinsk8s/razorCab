@@ -1,0 +1,15 @@
+@media screen and (max-width: 600px) {
+  .table thead { display: none; }
+  table tbody td {
+    display: block; padding: .6rem;
+  }
+  .table tbody tr td:first-child {
+    background: #ccc; color: #fff;
+  }
+  .table tbody td:before {
+    content: attr(data-th)': ';
+    font-weight: bold;
+    display: inline-block;
+    margin-right: 2px;
+  }
+}

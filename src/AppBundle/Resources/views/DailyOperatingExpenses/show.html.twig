@@ -1,0 +1,52 @@
+{% extends '::base.html.twig' %}
+
+{% block body -%}
+    <h1>Daily Operating Expenses</h1>
+
+    <table class="table record_properties">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ entity.id }}</td>
+            </tr>
+            <tr>
+                <th>Fuel used</th>
+                <td>{{ entity.fuelUsed }}</td>
+            </tr>
+            <tr>
+                <th>Miles driven</th>
+                <td>{{ entity.milesDriven }}</td>
+            </tr>
+            <tr>
+                <th>Repairs</th>
+                <td>{{ entity.repairs }}</td>
+            </tr>
+            <tr>
+                <th>Maintenance</th>
+                <td>{{ entity.maintenance }}</td>
+            </tr>
+            <tr>
+                <th>Supplies</th>
+                <td>{{ entity.supplies }}</td>
+            </tr>
+            <tr>
+                <th>Other expenses</th>
+                <td>{{ entity.otherExpenses }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+        <ul class="record_actions">
+    <li>
+        <a href="{{ path('dailyoperatingexpenses') }}">
+            Back to the list
+        </a>
+    </li>
+    <li>
+        <a href="{{ path('dailyoperatingexpenses_edit', { 'id': entity.id }) }}">
+            Edit
+        </a>
+    </li>
+    <li>{{ form(delete_form) }}</li>
+</ul>
+{% endblock %}

@@ -1,0 +1,40 @@
+{% extends 'base.html.twig' %}
+
+{% block stylesheets %}
+{% stylesheets '../app/Resources/public/css/reports.css' filter='cssrewrite' %}
+  <link href="{{ asset_url }}" rel="stylesheet" type="text/css" />
+{% endstylesheets %}
+{% endblock %}
+
+{% block body %}
+        <dl class="list-group">
+          <dt class="list-group-item list-group-item-info text-center">
+            Reports
+          </dt>
+          <dd class="list-group-item  text-center">
+            <a href="{{ path('reports_activityincome') }}" class="btn btn-info">
+              Activity Income
+            </a>
+          </dd>
+          <dd class="list-group-item  text-center">
+            <a href="{{ path('reports_carhours') }}" class="btn btn-info">
+              Car Hours
+            </a>
+          </dd>
+          <dd class="list-group-item  text-center">
+            <a href="{{ path('dailyoperatingexpenses') }}" class="btn btn-info">
+              Daily Operating Expenses
+            </a>
+          </dd>
+          <dd class="list-group-item  text-center">
+            <a href="{{ path('reports_driverpayroll') }}" class="btn btn-info">
+              Driver Payroll
+            </a>
+          </dd>
+          <dd class="list-group-item  text-center">
+            <a href="{{ path('operatingexpenses') }}" class="btn btn-info">
+              Operating Expenses
+            </a>
+          </dd>
+        </dl>
+{% endblock %}

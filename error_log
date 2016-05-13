@@ -1,0 +1,1 @@
+[10-May-2016 17:09:27 America/New_York] PHP Fatal error:  Allowed memory size of 536870912 bytes exhausted (tried to allocate 72 bytes) in phar:///home/rawtipep/public_html/composer.phar/src/Composer/DependencyResolver/RuleSetGenerator.php on line 237

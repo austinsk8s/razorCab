@@ -1,0 +1,64 @@
+{% extends '::base.html.twig' %}
+
+{% block stylesheets %}
+{% stylesheets '@AppBundle/Resources/public/css/mobileTables.css' %}
+<link rel="stylesheet" href="{{asset_url}}"/>
+{% endstylesheets %}
+{% endblock %}
+
+{% block javascripts %}
+{% javascripts  '@AppBundle/Resources/public/js/mobileTables.js' %}
+
+<script src="{{ asset_url }}"></script>
+{% endjavascripts %}
+{% endblock %}
+
+{% block body -%}
+    <h1>Daily Operating Expenses</h1>
+
+    <table class="table records_list">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Fuel used</th>
+                <th>Miles driven</th>
+                <th>Repairs</th>
+                <th>Maintenance</th>
+                <th>Supplies</th>
+                <th>Other expenses</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for entity in entities %}
+            <tr>
+                <td><a href="{{ path('dailyoperatingexpenses_show', { 'id': entity.id }) }}">{{ entity.id }}</a></td>
+                <td>{{ entity.fuelUsed }}</td>
+                <td>{{ entity.milesDriven }}</td>
+                <td>{{ entity.repairs }}</td>
+                <td>{{ entity.maintenance }}</td>
+                <td>{{ entity.supplies }}</td>
+                <td>{{ entity.otherExpenses }}</td>
+                <td>
+                <ul>
+                    <li>
+                        <a href="{{ path('dailyoperatingexpenses_show', { 'id': entity.id }) }}">show</a>
+                    </li>
+                    <li>
+                        <a href="{{ path('dailyoperatingexpenses_edit', { 'id': entity.id }) }}">edit</a>
+                    </li>
+                </ul>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+        <ul>
+        <li>
+            <a href="{{ path('dailyoperatingexpenses_new') }}">
+                Create a new entry
+            </a>
+        </li>
+    </ul>
+    {% endblock %}

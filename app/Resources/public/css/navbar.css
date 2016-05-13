@@ -1,0 +1,29 @@
+.navbar-default {
+  background: rgb(0, 153, 255);
+  border-bottom: 1px solid rgb(78, 136, 182);
+}
+
+.navbar-default .navbar-nav > .open > a,
+.navbar-default .navbar-nav > .open > a:hover,
+.navbar-default .navbar-nav > .open > a:focus,
+.dropdown-menu > li > a:hover, .dropdown-menu > li > a:focus,
+.navbar-default .navbar-toggle:hover, .navbar-default .navbar-toggle:focus {
+  color:white !important;
+  background: rgb(26, 140, 255) !important;
+}
+
+.navbar-nav > li > a,
+.navbar-default .navbar-brand {
+  color:white !important;
+}
+
+.icon-bar {
+  background-color: white !important;
+}
+
+@media (max-width: 767px) {
+  .navbar-default .navbar-nav .open .dropdown-menu > li > a {
+    color:white;
+    list-style: armenian;
+  }
+}

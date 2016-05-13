@@ -1,0 +1,60 @@
+{% extends '::base.html.twig' %}
+
+{% block body -%}
+    <h1>Driver Payroll</h1>
+
+    <table class="table record_properties">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ entity.id }}</td>
+            </tr>
+            <tr>
+                <th>Pickup time</th>
+                <td>{{ entity.pickupTime|date('Y-m-d H:i:s') }}</td>
+            </tr>
+            <tr>
+                <th>Dropoff time</th>
+                <td>{{ entity.dropOffTime|date('Y-m-d H:i:s') }}</td>
+            </tr>
+            <tr>
+                <th>Break hours</th>
+                <td>{{ entity.breakHours }}</td>
+            </tr>
+            <tr>
+                <th># journeys</th>
+                <td>{{ entity.numJourneys }}</td>
+            </tr>
+            <tr>
+                <th>Work miles driven</th>
+                <td>{{ entity.workMilesDriven }}</td>
+            </tr>
+            <tr>
+                <th>Leisure miles driven</th>
+                <td>{{ entity.leisureMilesDriven }}</td>
+            </tr>
+            <tr>
+                <th>Fares collected</th>
+                <td>{{ entity.faresCollected }}</td>
+            </tr>
+            <tr>
+                <th>Tips collected</th>
+                <td>{{ entity.tipsCollected }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+        <ul class="record_actions">
+    <li>
+        <a href="{{ path('reports_driverpayroll') }}">
+            Back to the list
+        </a>
+    </li>
+    <li>
+        <a href="{{ path('reports_driverpayroll_edit', { 'id': entity.id }) }}">
+            Edit
+        </a>
+    </li>
+    <li>{{ form(delete_form) }}</li>
+</ul>
+{% endblock %}
