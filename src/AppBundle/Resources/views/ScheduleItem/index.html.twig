@@ -19,7 +19,6 @@
     <table class="table records_list">
         <thead>
             <tr>
-                <th>Id</th>
                 <th>Driver</th>
                 <th>Scheduled in time</th>
                 <th>Scheduled out time</th>
@@ -33,7 +32,6 @@
         <tbody>
         {% for entity in entities %}
             <tr>
-                <td><a href="{{ path('scheduleitem_show', { 'id': entity.id }) }}">{{ entity.id }}</a></td>
                 <td><a href="{{ path('user_show', { 'id': entity.driver.id }) }}">{{ entity.driver }}</a></td>
                 <td>{% if entity.scheduledInTime %}{{ entity.scheduledInTime|date('Y-m-d H:i:s') }}{% endif %}</td>
                 <td>{% if entity.scheduledOutTime %}{{ entity.scheduledOutTime|date('Y-m-d H:i:s') }}{% endif %}</td>
